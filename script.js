@@ -914,3 +914,81 @@ setupParallaxSection(
 /* =========================================================
    END
    ========================================================= */
+
+
+/* =========================================================
+   RUNTIME IMAGE PATH FIX — addresses situations where images were uploaded
+   to the repository root instead of assets/images/ (so GitHub Pages serves them
+   from /<repo>/image.png rather than /<repo>/assets/images/image.png).
+
+   This detects img elements and CSS background-image styles that reference
+   "assets/images/" and rewrites them at runtime to point to the image filename
+   at the repo root. This is a non-destructive fix so you don't need to move
+   binary files in the repo.
+   ========================================================= */
+
+(function fixImagePathsAtRuntime() {
+  if (typeof window === 'undefined') return;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Fix <img> tags
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && src.includes('assets/images/')) {
+        const filename = src.split('/').pop();
+        img.setAttribute('src', filename);
+      }
+    });
+
+    // Fix inline style background-image declarations
+    const all = document.querySelectorAll('*');
+    all.forEach(el => {
+      const inline = el.getAttribute('style');
+      if (inline && inline.includes('assets/images/')) {
+        el.setAttribute('style', inline.replace(/assets\/images\//g, ''));
+      }
+    });
+
+    // Fix elements that rely on computed background-image (set via CSS url(...))
+    // We can't rewrite external CSS files from here, but we can add a small
+    // fallback: if a background-image URL contains assets/images/, add an
+    // overlay <img> with the correct src so the image appears. This handles
+    // cases where background images are essential visuals.
+    const computedCandidates = [];
+    all.forEach(el => {
+      try {
+        const bg = window.getComputedStyle(el).backgroundImage;
+        if (bg && bg.indexOf('assets/images/') !== -1) {
+          computedCandidates.push({el, bg});
+        }
+      } catch (e) {
+        // ignore cross-origin or other getComputedStyle failures
+      }
+    });
+
+    computedCandidates.forEach(({el, bg}) => {
+      // extract filename from url("...assets/images/filename.png")
+      const match = bg.match(/assets\/images\/([^)"']+)\)?/);
+      if (match && match[1]) {
+        const filename = match[1].split('/').pop();
+        // create an absolutely positioned img overlay inside the element
+        const img = document.createElement('img');
+        img.src = filename;
+        img.alt = '';
+        img.style.position = 'absolute';
+        img.style.inset = '0';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.pointerEvents = 'none';
+        img.style.zIndex = '-1';
+        // ensure element has relative positioning so absolute img fits
+        const prevPos = el.style.position;
+        if (!prevPos || prevPos === '') el.style.position = 'relative';
+        el.insertBefore(img, el.firstChild);
+      }
+    });
+
+  });
+})();

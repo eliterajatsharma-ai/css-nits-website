@@ -125,7 +125,7 @@ a {
 .hero-bg {
     position: absolute;
     inset: -2%;
-    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .05), rgba(3, 8, 20, .45)), url("assets/images/image1.png");
+    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .05), rgba(3, 8, 20, .45)), url("image1.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -662,7 +662,7 @@ a {
     overflow: hidden;
     isolation: isolate;
     background-color: #050814;
-    background-image: url("./assets/images/image5.png") !important;
+    background-image: url("image5.png") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1072,7 +1072,7 @@ a {
     inset: -5%;
     width: 110%;
     height: 110%;
-    background-image: url("./assets/images/image6.png");
+    background-image: url("image6.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1407,7 +1407,7 @@ image7.png = 3 characters in one image
     transform: translateX(-50%);
     border-radius: 14px;
     overflow: hidden;
-    background-image: url("./assets/images/image7.png");
+    background-image: url("image7.png");
     background-repeat: no-repeat;
     /* 3 characters = 3 equal horizontal sections */
     background-size: 300% 100%;
@@ -1484,7 +1484,7 @@ EVENTS — BACKGROUND
     padding: 100px 7%;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("./assets/images/image8.png") !important;
+    background-image: url("image8.png") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1521,7 +1521,7 @@ EVENTS — PARTICLES + CARDS
     padding: 120px 7%;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("./assets/images/image8.png") !important;
+    background-image: url("image8.png") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1857,7 +1857,7 @@ EVENTS MOBILE
     position: absolute;
     inset: 0;
     z-index: -3;
-    background-image: url("./assets/images/image8.png");
+    background-image: url("image8.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2064,7 +2064,7 @@ EVENTS MOBILE
     padding: 120px 7% 100px;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("./assets/images/image8.png") !important;
+    background-image: url("image8.png") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -2074,7 +2074,7 @@ EVENTS MOBILE
     position: absolute;
     inset: 0;
     z-index: -3;
-    background-image: url("./assets/images/image8.png") !important;
+    background-image: url("image8.png") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -2302,7 +2302,7 @@ EVENTS MOBILE
 .announcements-bg {
     position: absolute;
     inset: -2%;
-    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .05), rgba(3, 8, 20, .45)), url("./assets/images/image9.png");
+    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .05), rgba(3, 8, 20, .45)), url("image9.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2379,7 +2379,7 @@ EVENTS MOBILE
 .sponsors-bg {
     position: absolute;
     inset: -3%;
-    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .20), rgba(3, 8, 20, .55)), url("assets/images/image10.png");
+    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .20), rgba(3, 8, 20, .55)), url("image10.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2592,7 +2592,7 @@ EVENTS MOBILE
 .community-bg {
     position: absolute;
     inset: -3%;
-    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .20), rgba(3, 8, 20, .55)), url("assets/images/image11.png");
+    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .20), rgba(3, 8, 20, .55)), url("image11.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2720,7 +2720,7 @@ EVENTS MOBILE
 .gallery-bg {
     position: absolute;
     inset: -3%;
-    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .15), rgba(3, 8, 20, .55)), url("assets/images/image12.png");
+    background-image: linear-gradient( to bottom, rgba(3, 8, 20, .15), rgba(3, 8, 20, .55)), url("image12.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3280,7 +3280,7 @@ EVENTS MOBILE
     position: absolute;
     inset: -5%;
     z-index: 0;
-    background-image: url("./assets/images/image5.png") !important;
+    background-image: url("image5.png") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
